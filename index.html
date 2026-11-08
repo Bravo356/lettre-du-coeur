@@ -1,70 +1,1457 @@
-<!doctype html>
-<html lang=fr>
+<!DOCTYPE html>
+
+<html lang="fr">
 
 <head>
-<meta charset="URF-8"
-<title>Lettres du coeur| des mots qui viennent du coeur</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Lettres du Cœur</title>
+
+
+<style>
+
+{
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+
+body {
+
+font-family: Georgia, serif;
+
+background: #fff8f6;
+
+color: #543b42;
+
+}
+
+
+header {
+
+background: #f4dfe3;
+
+padding: 30px 15px;
+
+text-align: center;
+
+}
+
+
+header h1 {
+
+font-size: 34px;
+
+color: #963f5b;
+
+}
+
+
+header p {
+
+margin-top: 10px;
+
+font-style: italic;
+
+}
+
+
+nav {
+
+background: #963f5b;
+
+padding: 16px;
+
+text-align: center;
+
+}
+
+
+nav a {
+
+color: white;
+
+text-decoration: none;
+
+margin: 0 12px;
+
+font-size: 15px;
+
+}
+
+
+nav a:hover {
+
+text-decoration: underline;
+
+}
+
+
+.hero {
+
+text-align: center;
+
+padding: 85px 20px;
+
+background: linear-gradient(#fff1f2, #fff8f6);
+
+}
+
+
+.hero h2 {
+
+font-size: 36px;
+
+color: #963f5b;
+
+margin-bottom: 20px;
+
+}
+
+
+.hero p {
+
+font-size: 17px;
+
+line-height: 1.8;
+
+max-width: 650px;
+
+margin: auto;
+
+}
+
+
+.btn {
+
+display: inline-block;
+
+margin-top: 25px;
+
+background: #963f5b;
+
+color: white;
+
+padding: 13px 25px;
+
+text-decoration: none;
+
+border-radius: 30px;
+
+}
+
+
+section {
+
+padding: 55px 20px;
+
+text-align: center;
+
+}
+
+
+section h2 {
+
+color: #963f5b;
+
+margin-bottom: 30px;
+
+}
+
+
+.recherche {
+
+max-width: 500px;
+
+margin: 0 auto 30px;
+
+}
+
+
+.recherche input {
+
+width: 100%;
+
+padding: 14px;
+
+border: 1px solid #e4b9c5;
+
+border-radius: 25px;
+
+font-size: 15px;
+
+outline: none;
+
+}
+
+
+.filtres {
+
+display: flex;
+
+justify-content: center;
+
+flex-wrap: wrap;
+
+gap: 10px;
+
+margin-bottom: 30px;
+
+}
+
+
+.filtres button {
+
+padding: 10px 17px;
+
+border: none;
+
+background: #f4dfe3;
+
+color: #963f5b;
+
+border-radius: 20px;
+
+cursor: pointer;
+
+}
+
+
+.filtres button.active,
+
+.filtres button:hover {
+
+background: #963f5b;
+
+color: white;
+
+}
+
+
+.collections {
+
+display: flex;
+
+flex-wrap: wrap;
+
+justify-content: center;
+
+gap: 20px;
+
+}
+
+
+.card {
+
+background: white;
+
+padding: 25px;
+
+width: 270px;
+
+border-radius: 15px;
+
+box-shadow: 0 4px 15px #00000010;
+
+transition: transform 0.3s;
+
+}
+
+
+.card:hover {
+
+transform: translateY(-5px);
+
+}
+
+
+.card h3 {
+
+color: #963f5b;
+
+margin-bottom: 12px;
+
+}
+
+
+.card p {
+
+line-height: 1.7;
+
+}
+
+
+.card button {
+
+margin-top: 20px;
+
+padding: 11px 20px;
+
+background: #963f5b;
+
+color: white;
+
+border: none;
+
+border-radius: 25px;
+
+cursor: pointer;
+
+}
+
+
+.card button:hover {
+
+background: #702c43;
+
+}
+
+
+#zone-lettre {
+
+display: none;
+
+max-width: 700px;
+
+margin: 40px auto;
+
+padding: 35px;
+
+background: white;
+
+border-radius: 18px;
+
+box-shadow: 0 4px 20px #00000012;
+
+line-height: 2;
+
+text-align: left;
+
+}
+
+
+#zone-lettre h3 {
+
+text-align: center;
+
+color: #963f5b;
+
+margin-bottom: 25px;
+
+}
+
+
+#texte-lettre {
+
+white-space: pre-line;
+
+}
+
+
+.actions {
+
+text-align: center;
+
+margin-top: 25px;
+
+}
+
+
+.actions button {
+
+padding: 11px 20px;
+
+margin: 5px;
+
+border: none;
+
+border-radius: 25px;
+
+background: #963f5b;
+
+color: white;
+
+cursor: pointer;
+
+}
+
+
+#apropos p {
+
+max-width: 650px;
+
+margin: auto;
+
+line-height: 1.9;
+
+}
+
+
+footer {
+
+background: #963f5b;
+
+color: white;
+
+text-align: center;
+
+padding: 30px;
+
+line-height: 1.9;
+
+}
+
+
+@media(max-width: 600px) {
+
+header h1 {
+
+font-size: 27px;
+
+}
+
+
+.hero h2 {
+
+font-size: 29px;
+
+}
+
+
+nav a {
+
+margin: 0 5px;
+
+font-size: 13px;
+
+}
+
+
+.card {
+
+width: 100%;
+
+max-width: 350px;
+
+}
+
+
+#zone-lettre {
+
+padding: 23px;
+
+}
+
+}
+
+</style>
+
 </head>
 
+
 <body>
-<h1> Lettres du coeur</h1>
-<p>des mots sinceres, des sentiments profonds et des lettres qui touchent le coeur. Decouvrez notre univers dedie a l'amour</p>
+
+
+<header>
+
+<h1>♡ Lettres du Cœur ♡</h1>
+
+<p>Des mots sincères pour des sentiments éternels</p>
+
+</header>
+
 
 <nav>
-<a href="#acceuil">Acceuil</a>
+
+<a href="#accueil">Accueil</a>
+
 <a href="#lettres">Nos lettres</a>
-<a href="#romantiques">Romantiques</a>
-<a href="#contact">Contact</a>
+
+<a href="#apropos">À propos</a>
+
 </nav>
 
-<section id="acceuil">
+
+<div class="hero" id="accueil">
+
+
 <h2>Bienvenue dans notre univers</h2>
-<P>Ici, chaque lettre raconte une histoire, chaque mot exprime un sentiment et chaquephrase vient du coeur </P>
-<h3>Exprimez vos sentiments avec des mots</h3>
-</section>
 
-<section id="lettres"
-<h2>Nos collection de lettres</h2>
-<div class="categorie">
-<h3>Lettres romantiques</h3>
-<p>Des mots doux pour exprimer son amour</p>
-</div>
-    
-<div class="categorie">
-<h3>Declarations d'amour</h3>
-<p> Des Lettrespour avouer ses sentiments</p>
-</div>
-
-<div class="categorie">
-<h3>lettres de regret</h3>
-<p>Des mots pour demander pardon</p>
-</div>
-
-<div class="categorie">
-<h3>Lettres speciales</h3>
-<p>Des lettres pour les occasions importantes</p>
-</div>
-</section>
-
-
-<section id="romantiques">
-
-<h2>Une lettre romantique</h2>
-
-<div class="lettre">
-<h3>Tu occupes mes pensees</h3>
 
 <p>
-Depuis que tu es entre(e) dans ma vie, chaque jour devient un peu plus special. Ta presence apporte de la joie a mes journees et ton sourire illumine mes pensees
+
+Certains sentiments sont difficiles à exprimer.
+
+Ici, chaque mot est une façon de faire parler
+
+le cœur. Découvrez nos lettres et trouvez
+
+les mots qui correspondent à vos émotions.
+
 </p>
 
-<p>
-Avec toute mon affection
-</p>
+
+<a href="#lettres" class="btn">
+
+Explorer les lettres
+
+</a>
+
 
 </div>
+
+
+<section id="lettres">
+
+
+<h2>Notre bibliothèque de lettres</h2>
+
+
+<div class="recherche">
+
+<input
+
+type="text"
+
+id="recherche"
+
+placeholder="Rechercher une lettre..."
+
+oninput="afficherLettres()"
+
+>
+
+</div>
+
+
+<div class="filtres">
+
+
+<button class="active" onclick="filtrer('toutes', this)">
+
+Toutes
+
+</button>
+
+
+<button onclick="filtrer('romantique', this)">
+
+Romantiques
+
+</button>
+
+
+<button onclick="filtrer('regret', this)">
+
+Regrets
+
+</button>
+
+
+<button onclick="filtrer('declaration', this)">
+
+Déclarations
+
+</button>
+
+
+<button onclick="filtrer('speciale', this)">
+
+Spéciales
+
+</button>
+
+
+<button onclick="filtrer('amitie', this)">
+
+Amitié
+
+</button>
+
+
+<button onclick="filtrer('anniversaire', this)">
+
+Anniversaire
+
+</button>
+
+
+<button onclick="filtrer('distance', this)">
+
+Distance
+
+</button>
+
+
+<button onclick="filtrer('remerciement', this)">
+
+Remerciements
+
+</button>
+
+
+</div>
+
+
+<div class="collections" id="liste-lettres"></div>
+
+
+<div id="zone-lettre">
+
+
+<h3 id="titre-lettre"></h3>
+
+
+<p id="texte-lettre"></p>
+
+
+<div class="actions">
+
+
+<button onclick="copierLettre()">
+
+♡ Copier la lettre
+
+</button>
+
+
+<button onclick="fermerLettre()">
+
+Fermer
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
 </section>
+
+
+<section id="apropos">
+
+
+<h2>À propos de nous</h2>
+
+
+<p>
+
+Lettres du Cœur est un espace dédié aux émotions,
+
+aux mots doux et aux sentiments que l'on souhaite
+
+partager. Notre objectif est de permettre à chacun
+
+de trouver les mots justes pour exprimer ce qu'il
+
+ressent.
+
+</p>
+
+
+</section>
+
+
+<footer>
+
+<p>♡ Lettres du Cœur © 2026</p>
+
+<p>Écrit avec le cœur.</p>
+
+</footer>
+
+
+<script>
+
+
+const lettres = [
+
+
+{
+
+titre: "Un amour précieux",
+
+categorie: "romantique",
+
+texte: `Mon amour,
+
+
+Depuis que tu es entré(e) dans ma vie,
+
+beaucoup de choses ont changé.
+
+
+Tu as cette façon particulière de rendre
+
+mes journées plus belles.
+
+
+Je ne te promets pas une histoire parfaite,
+
+mais je souhaite construire avec toi
+
+une histoire sincère, remplie de respect,
+
+de confiance et de tendresse.
+
+
+Tu es une personne précieuse à mes yeux.
+
+
+Avec toute mon affection.`
+
+},
+
+
+{
+
+titre: "Tu occupes mes pensées",
+
+categorie: "romantique",
+
+texte: `Il y a des moments où je pense à toi
+
+sans même m'en rendre compte.
+
+
+Un sourire, un souvenir ou une simple pensée
+
+suffisent parfois à illuminer ma journée.
+
+
+Je ne sais pas comment expliquer
+
+ce que ta présence représente pour moi,
+
+mais je sais que tu comptes énormément.
+
+
+Tu as une place particulière dans mon cœur.`
+
+},
+
+
+{
+
+titre: "Mon bonheur",
+
+categorie: "romantique",
+
+texte: `Je ne cherche pas une histoire parfaite.
+
+Je cherche une histoire vraie.
+
+
+Une histoire où nous pouvons rire,
+
+parler librement, nous comprendre
+
+et avancer ensemble.
+
+
+Les petites attentions comptent,
+
+les paroles sincères aussi.
+
+
+J'espère que nous continuerons
+
+à créer de beaux souvenirs.`
+
+},
+
+
+{
+
+titre: "Pardonne-moi",
+
+categorie: "regret",
+
+texte: `Je sais que j'ai commis des erreurs
+
+et je ne cherche pas à les justifier.
+
+
+Je regrette les moments où mes paroles
+
+ou mon comportement ont pu te blesser.
+
+
+Je voudrais apprendre de mes erreurs
+
+et faire mieux à l'avenir.
+
+
+Je sais qu'un pardon ne se réclame pas,
+
+il se mérite avec le temps et les actes.
+
+
+Je suis sincèrement désolé(e).`
+
+},
+
+
+{
+
+titre: "Je reconnais mes erreurs",
+
+categorie: "regret",
+
+texte: `Parfois, il est difficile d'admettre
+
+que nous avons tort.
+
+
+Mais aujourd'hui, je préfère mettre
+
+ma fierté de côté.
+
+
+Je reconnais mes erreurs
+
+et je comprends que certaines choses
+
+auraient pu être différentes.
+
+
+Je ne peux pas changer le passé,
+
+mais je peux faire des efforts
+
+pour mieux agir à l'avenir.
+
+
+Pardonne-moi.`
+
+},
+
+
+{
+
+titre: "Ne nous perdons pas",
+
+categorie: "regret",
+
+texte: `Je n'aime pas savoir qu'il existe
+
+une distance entre nous.
+
+
+Je sais que tout ne peut pas toujours
+
+être parfait.
+
+
+Mais je crois que les relations
+
+méritent parfois une conversation sincère,
+
+de la patience et de la compréhension.
+
+
+J'aimerais que nous puissions
+
+nous écouter et nous comprendre davantage.`
+
+},
+
+
+{
+
+titre: "J'ai quelque chose à te dire",
+
+categorie: "declaration",
+
+texte: `Je ne sais pas exactement comment
+
+commencer cette lettre.
+
+
+Mais il y a quelque chose que
+
+je garde dans mon cœur depuis un moment.
+
+
+Ta présence me fait du bien
+
+et j'apprécie énormément la personne
+
+que tu es.
+
+
+Je voulais simplement être honnête
+
+avec toi et te faire connaître
+
+mes sentiments.`
+
+},
+
+
+{
+
+titre: "Tu me plais",
+
+categorie: "declaration",
+
+texte: `Je pourrais chercher mille façons
+
+de le dire, mais je préfère être simple.
+
+
+Tu me plais.
+
+
+J'aime ta façon d'être,
+
+ta personnalité et les moments
+
+que nous partageons.
+
+
+Je ne sais pas ce que l'avenir réserve,
+
+mais je voulais que tu connaisses
+
+mes sentiments.`
+
+},
+
+
+{
+
+titre: "Une place dans mon cœur",
+
+categorie: "declaration",
+
+texte: `Certaines personnes attirent notre attention
+
+sans même essayer.
+
+
+Tu fais partie de ces personnes.
+
+
+Petit à petit, tu as pris une place
+
+particulière dans mes pensées.
+
+
+Je ne veux pas cacher ce que je ressens.
+
+
+Tu comptes beaucoup pour moi.`
+
+},
+
+
+{
+
+titre: "Tu es important(e)",
+
+categorie: "speciale",
+
+texte: `Je voulais simplement te rappeler
+
+que tu es une personne importante.
+
+
+Même si je ne le dis pas toujours,
+
+ta présence a de la valeur.
+
+
+Ne doute jamais de ce que tu représentes
+
+pour les personnes qui t'apprécient.
+
+
+Tu mérites le respect,
+
+la sincérité et le bonheur.`
+
+},
+
+
+{
+
+titre: "Un souvenir inoubliable",
+
+categorie: "speciale",
+
+texte: `Il existe des souvenirs
+
+que le temps ne peut pas effacer.
+
+
+Des conversations, des sourires
+
+et des moments simples
+
+qui restent gravés dans notre mémoire.
+
+
+Je suis heureux(se) d'avoir partagé
+
+ces instants avec toi.
+
+
+Merci pour ces beaux souvenirs.`
+
+},
+
+
+{
+
+titre: "À mon meilleur ami",
+
+categorie: "amitie",
+
+texte: `Une vraie amitié ne se mesure pas
+
+au nombre de messages échangés.
+
+
+Elle se reconnaît dans la confiance,
+
+le respect et la présence.
+
+
+Merci d'être cette personne
+
+avec qui je peux partager
+
+mes joies et mes difficultés.
+
+
+J'espère que notre amitié
+
+continuera longtemps.`
+
+},
+
+
+{
+
+titre: "Merci d'être là",
+
+categorie: "amitie",
+
+texte: `Je ne le dis peut-être pas assez,
+
+mais je suis reconnaissant(e)
+
+de t'avoir dans ma vie.
+
+
+Merci pour les conseils,
+
+les encouragements et les moments
+
+où tu as pris le temps de m'écouter.
+
+
+Une personne comme toi
+
+n'est pas facile à trouver.
+
+
+Merci pour ton amitié.`
+
+},
+
+
+{
+
+titre: "Joyeux anniversaire",
+
+categorie: "anniversaire",
+
+texte: `Aujourd'hui est un jour spécial,
+
+car c'est le jour où tu es né(e).
+
+
+Je te souhaite beaucoup de bonheur,
+
+de réussite, de santé et de beaux souvenirs.
+
+
+Que cette nouvelle année de ta vie
+
+soit remplie de belles surprises.
+
+
+Profite pleinement de cette journée.
+
+
+Joyeux anniversaire !`
+
+},
+
+
+{
+
+titre: "Pour une personne exceptionnelle",
+
+categorie: "anniversaire",
+
+texte: `En ce jour particulier,
+
+je veux te rappeler combien
+
+tu es une belle personne.
+
+
+Que tes projets prennent vie,
+
+que tes efforts soient récompensés
+
+et que ton sourire ne disparaisse jamais.
+
+
+Tu mérites une année magnifique.
+
+
+Joyeux anniversaire !`
+
+},
+
+
+{
+
+titre: "Malgré la distance",
+
+categorie: "distance",
+
+texte: `La distance peut séparer les personnes,
+
+mais elle ne doit pas forcément
+
+effacer les sentiments.
+
+
+Même loin de toi,
+
+je garde de beaux souvenirs
+
+et une pensée particulière pour toi.
+
+
+J'espère que le jour viendra
+
+où nous pourrons partager
+
+de nouveaux moments ensemble.
+
+
+Prends soin de toi.`
+
+},
+
+
+{
+
+titre: "Tu me manques",
+
+categorie: "distance",
+
+texte: `Il y a des jours où ton absence
+
+se fait particulièrement ressentir.
+
+
+J'aimerais pouvoir partager avec toi
+
+les petites choses du quotidien.
+
+
+Même si nous ne sommes pas proches,
+
+je garde une pensée pour toi.
+
+
+J'espère que tout va bien de ton côté.
+
+
+Prends soin de toi.`
+
+},
+
+
+{
+
+titre: "Merci pour tout",
+
+categorie: "remerciement",
+
+texte: `Je prends quelques instants
+
+pour te dire merci.
+
+
+Merci pour ta gentillesse,
+
+pour ton attention et pour les moments
+
+que tu m'as offerts.
+
+
+Les petites choses ont parfois
+
+une grande importance.
+
+
+Je n'oublie pas ce que tu as fait
+
+et je t'en suis reconnaissant(e).`
+
+},
+
+
+{
+
+titre: "Une gratitude sincère",
+
+categorie: "remerciement",
+
+texte: `Certaines personnes méritent
+
+qu'on leur dise merci plus souvent.
+
+
+Tu fais partie de ces personnes.
+
+
+Merci pour ta présence,
+
+ta patience et ta sincérité.
+
+
+J'espère pouvoir te rendre
+
+un jour toute cette gentillesse.
+
+
+Merci du fond du cœur.`
+
+}
+
+
+];
+
+
+let categorieActuelle = "toutes";
+
+
+function afficherLettres() {
+
+
+const liste = document.getElementById("liste-lettres");
+
+const recherche = document.getElementById("recherche")
+
+.value.toLowerCase();
+
+
+liste.innerHTML = "";
+
+
+const resultats = lettres.filter(lettre => {
+
+
+const correspondCategorie =
+
+categorieActuelle === "toutes" ||
+
+lettre.categorie === categorieActuelle;
+
+
+const correspondRecherche =
+
+lettre.titre.toLowerCase().includes(recherche) ||
+
+lettre.texte.toLowerCase().includes(recherche);
+
+
+return correspondCategorie && correspondRecherche;
+
+
+});
+
+
+if (resultats.length === 0) {
+
+liste.innerHTML = "<p>Aucune lettre trouvée.</p>";
+
+return;
+
+}
+
+
+resultats.forEach(lettre => {
+
+
+const carte = document.createElement("div");
+
+carte.className = "card";
+
+
+const titre = document.createElement("h3");
+
+titre.textContent = "♡ " + lettre.titre;
+
+
+const description = document.createElement("p");
+
+description.textContent =
+
+"Une lettre de la collection " + lettre.categorie + ".";
+
+
+const bouton = document.createElement("button");
+
+bouton.textContent = "Lire la lettre";
+
+
+bouton.onclick = () => afficherLettre(lettre);
+
+
+carte.appendChild(titre);
+
+carte.appendChild(description);
+
+carte.appendChild(bouton);
+
+
+liste.appendChild(carte);
+
+
+});
+
+
+}
+
+
+function filtrer(categorie, bouton) {
+
+
+categorieActuelle = categorie;
+
+
+document.querySelectorAll(".filtres button")
+
+.forEach(btn => btn.classList.remove("active"));
+
+
+bouton.classList.add("active");
+
+
+afficherLettres();
+
+
+fermerLettre();
+
+
+}
+
+
+function afficherLettre(lettre) {
+
+
+document.getElementById("titre-lettre").textContent =
+
+"♡ " + lettre.titre;
+
+
+document.getElementById("texte-lettre").textContent =
+
+lettre.texte;
+
+
+document.getElementById("zone-lettre").style.display =
+
+"block";
+
+
+document.getElementById("zone-lettre").scrollIntoView({
+
+behavior: "smooth",
+
+block: "center"
+
+});
+
+
+}
+
+
+function fermerLettre() {
+
+
+document.getElementById("zone-lettre").style.display =
+
+"none";
+
+
+}
+
+
+function copierLettre() {
+
+
+const titre =
+
+document.getElementById("titre-lettre").textContent;
+
+
+const texte =
+
+document.getElementById("texte-lettre").textContent;
+
+
+navigator.clipboard.writeText(titre + "\n\n" + texte)
+
+.then(() => {
+
+alert("♡ Lettre copiée avec succès !");
+
+})
+
+.catch(() => {
+
+alert("Impossible de copier cette lettre.");
+
+});
+
+
+}
+
+
+afficherLettres();
+
+
+</script>
 
 
 </body>
+
 </html>
+
+<footer>
+    <p>♡ Lettres du Cœur © 2026 - Créé par Ryan </p>
+    <p>Écrit avec le cœur.</p>
+</footer>
